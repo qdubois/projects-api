@@ -6,7 +6,7 @@ invest:
     path: /invest
     defaults: { _controller: AnaxagoCoreBundle:Invest:invest }
 
-login:
+login: 
     path: /login
     defaults: { _controller: AnaxagoCoreBundle:Security:login }
 
