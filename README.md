@@ -6,6 +6,7 @@ Anaxago symfony-starter-kit
 Ce projet est un kit de démarage avec :
 - Symfony 3.4 minimum
 - php 7.1 minimum
+- MySQL 5.5 minimum ou MariaDB 10 minimum
 
 La base de données contient deux tables :
 - user => pour la gestion et la connexion des utilisateurs 
