@@ -1,0 +1,13 @@
+.card {
+    height: 470px;
+}
+
+.card-text {
+    height: 120px;
+}
+
+.btn-primary.gold{
+    color: #fff;
+    background: #AF9262;
+    border-color: #AF9262;
+}

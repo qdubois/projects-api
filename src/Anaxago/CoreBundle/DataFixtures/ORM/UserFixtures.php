@@ -33,11 +33,17 @@ class UserFixtures extends Fixture
             ->setEmail('admin@local.com')
             // because we like security
             ->setPlainPassword('admin')
-            ->addRoles('ROLE_ADMIN')
-        ;
+            ->addRoles('ROLE_ADMIN');
+
+        $userQuentin = (new User())
+            ->setFirstName('Quentin')
+            ->setLastName('Dubois')
+            ->setEmail('dubois.quentin@gmail.com')
+            ->setPlainPassword('pingpong');
 
         $manager->persist($investor);
         $manager->persist($admin);
+        $manager->persist($userQuentin);
 
         $manager->flush();
     }

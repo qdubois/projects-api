@@ -2,6 +2,10 @@ anaxago_core:
     resource: "@AnaxagoCoreBundle/Resources/config/routing.yml"
     prefix:   /
 
+invest:
+    path: /invest
+    defaults: { _controller: AnaxagoCoreBundle:Invest:invest }
+
 login:
     path: /login
     defaults: { _controller: AnaxagoCoreBundle:Security:login }

@@ -42,6 +42,21 @@ class Project
      */
     private $description;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imageURL", type="text")
+     */
+    private $imageURL;
+
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="callForFund", type="float")
+     */
+    private $callForFund;
+
 
     /**
      * Get id
@@ -123,6 +138,55 @@ class Project
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set imageURL
+     *
+     * @param string $imageURL
+     *
+     * @return Project
+     */
+    public function setImageURL($imageURL)
+    {
+        $this->imageURL = $imageURL;
+
+        return $this;
+    }
+
+    /**
+     * Get imageURL
+     *
+     * @return string
+     */
+    public function getImageURL()
+    {
+        return $this->imageURL;
+    }
+
+
+    /**
+     * Set callForFund
+     *
+     * @param float $callForFund
+     *
+     * @return float
+     */
+    public function setCallForFund($callForFund)
+    {
+        $this->callForFund = $callForFund;
+
+        return $this;
+    }
+
+    /**
+     * Get callForFund
+     *
+     * @return *
+     */
+    public function getCallForFund()
+    {
+        return $this->callForFund;
     }
 }
 

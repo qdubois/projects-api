@@ -10,13 +10,16 @@
                 {% endif %}
                 <div class="col-md-4">
                     <div class="card">
-                        <img class="card-img-top" src="https://picsum.photos/360/240/?random" alt="project">
+                        <img class="card-img-top" src="{{ project.imageURL }}" alt="project">
                         <div class="card-body">
                             <h5>{{ project.title }}</h5>
                             <p class="card-text">
                                 {{ project.description }}
                             </p>
+                            <p><b>Appel de fond</b> : {{ project.callForFund|number_format(0, ',', ' ')   }} €</p>
+                            <a class="btn btn-block btn-primary gold" href="/invest">Investir</a>
                         </div>
+
                     </div>
                 </div>
                 {% if not loop.first and (loop.last or loop.index % 3 == 0 ) %}

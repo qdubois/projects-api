@@ -30,7 +30,9 @@ class ProjectFixtures extends Fixture
             $projectToPersist = (new Project())
                 ->setTitle($project['name'])
                 ->setDescription($project['description'])
-                ->setSlug($project['slug']);
+                ->setImageURL($project['imageURL'])
+                ->setSlug($project['slug'])
+                ->setCallForFund($project['callForFund']);
             $manager->persist($projectToPersist);
         }
         $manager->flush();
@@ -46,16 +48,23 @@ class ProjectFixtures extends Fixture
                 'name' => 'Fred de la compta',
                 'description' => 'Dépoussiérer la comptabilité grâce à l\'intelligence artificielle',
                 'slug' => 'fred-compta',
+                'callForFund' => '4000000',
+                'imageURL' => 'https://www.anaxago.com/uploads/media/teasercarousel/0001/96/thumb_95216_teasercarousel_widget.png',
             ],
             [
                 'name' => 'Mojjo',
                 'description' => 'L\'intelligence artificielle au service du tennis : Mojjo transforme l\'expérience des joueurs et des fans de tennis grâce à une technologie unique de captation et de traitement de la donnée',
                 'slug' => 'mojjo',
+                'callForFund' => '600000',
+                'imageURL' => 'https://www.anaxago.com/uploads/media/teasercarousel/0001/85/thumb_84096_teasercarousel_widget.png',
+
             ],
             [
                 'name' => 'Eole',
                 'description' => 'Projet de construction d\'une résidence de 80 logements sociaux à Petit-Bourg en Guadeloupe par le promoteur Orion.',
                 'slug' => 'eole',
+                'callForFund' => '2000000',
+                'imageURL' => 'https://picsum.photos/338/187/?random',
             ],
         ];
     }
