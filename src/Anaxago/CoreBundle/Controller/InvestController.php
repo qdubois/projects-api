@@ -23,6 +23,7 @@ class InvestController extends Controller
 {
     /**
      * @param EntityManagerInterface $entityManager
+     * @param Request $request
      *
      * @return Response
      */

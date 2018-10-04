@@ -1,10 +1,10 @@
 /*.card {
     height: 470px;
 }
-
+*/
 .card-text {
-    height: 120px;
-}*/
+    min-height: 120px;
+}
 
 .btn-primary.gold{
     color: #fff;
