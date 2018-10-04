@@ -17,7 +17,7 @@
                                 {{ project.description }}
                             </p>
                             <p><b>Appel de fond</b> : {{ project.callForFund|number_format(0, ',', ' ')   }} €</p>
-                            <a class="btn btn-block btn-primary gold" href="/invest">Investir</a>
+                            <a class="btn btn-block btn-primary gold" href="/invest?projectname={{ project.title }}">Investir</a>
                         </div>
 
                     </div>

@@ -26,24 +26,14 @@ class InvestController extends Controller
      *
      * @return Response
      */
-    public function investAction(EntityManagerInterface $entityManager): Response
+    public function investAction(EntityManagerInterface $entityManager, Request $request): Response
     {
 
-        $investForm = $this->createForm(InvestType::class);
-       // $investForm->add('S\'enregistrer', SubmitType::class);
+        $projectName = $request->query->get('projectname');
+        $investForm = $this->createForm(InvestType::class, null ,array(
+            'data' => array('project-name' => $projectName)
+        ));
 
-       /* $registrationForm->handleRequest($request);
-        if ($registrationForm->isSubmitted() && $registrationForm->isValid()) {
-            $em->persist($newUser);
-            $em->flush();
-
-            // login user after its registration
-            $usernameToken = new UsernamePasswordToken($newUser, $newUser->getPassword(), 'main', $newUser->getRoles());
-            $tokenStorage->setToken($usernameToken);
-            $session->set('_security_main', serialize($usernameToken));
-
-            return $this->redirectToRoute('anaxago_core_homepage');
-        }*/
 
         return $this->render('@AnaxagoCore/invest.html.twig', ['form' => $investForm->createView()]);
 
