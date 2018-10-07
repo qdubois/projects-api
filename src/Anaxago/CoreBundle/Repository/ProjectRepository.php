@@ -2,6 +2,8 @@
 
 namespace Anaxago\CoreBundle\Repository;
 
+use Anaxago\CoreBundle\Entity\Project;
+
 /**
  * ProjectRepository
  *
@@ -10,4 +12,19 @@ namespace Anaxago\CoreBundle\Repository;
  */
 class ProjectRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    /**
+     * @return projects[]
+     */
+    public function findByUser(int $userID)
+    {
+        // get the project that the following user $userID invested in
+        $rawquery = 'SELECT p.id, p.slug, p.title, p.description, p.imageURL,p.callForFund, p.isFunded FROM project as p INNER JOIN funding as f where f.projectID = p.id and f.userID = '.$userID;
+        $qb = $this->getEntityManager()->getConnection()->prepare($rawquery);
+        $qb->execute();
+
+        return $qb->fetchAll();
+
+    }
+
 }

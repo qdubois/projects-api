@@ -18,10 +18,15 @@ invest:
     defaults: { _controller: AnaxagoCoreBundle:Invest:invest }
 
 
-API:
+api_projects:
     path: /api/projects
     defaults: { _controller: AnaxagoCoreBundle:API:projectsList }
 
 
-api_login_check:
-    path: /api/login_check
+api_userprojects:
+  path: /api/userprojects
+  defaults: { _controller: AnaxagoCoreBundle:API:userProjectList }
+
+api_invest:
+  path: /api/invest
+  defaults: { _controller: AnaxagoCoreBundle:API:investAPI }

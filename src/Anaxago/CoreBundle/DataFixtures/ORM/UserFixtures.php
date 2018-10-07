@@ -25,7 +25,8 @@ class UserFixtures extends Fixture
             ->setFirstName('John')
             ->setLastName('Doe')
             ->setEmail('john@local.com')
-            ->setPlainPassword('john');
+            ->setPlainPassword('john')
+            ->setToken('flksdflnsdfhljksdfljkfgmksdmfhqmsdkfnljkqsdssknqsl');
 
         $admin = (new User())
             ->setFirstName('admin')
@@ -33,13 +34,15 @@ class UserFixtures extends Fixture
             ->setEmail('admin@local.com')
             // because we like security
             ->setPlainPassword('admin')
-            ->addRoles('ROLE_ADMIN');
+            ->addRoles('ROLE_ADMIN')
+            ->setToken('dsfsdfdshljksdfljkfgmksdmfhqmsdkfnljkqssdfsdfezgllm');
 
         $userQuentin = (new User())
-            ->setFirstName('Quentin')
-            ->setLastName('Dubois')
+            ->setFirstName('Jane')
+            ->setLastName('Doo')
             ->setEmail('dubois.quentin@gmail.com')
-            ->setPlainPassword('pingpong');
+            ->setPlainPassword('pingpong')
+            ->setToken('dsfsddfsdflksdlfmlsdkflmsdkflsdkflsdkflksdlfkdslklsdfsdfezgllm');
 
         $manager->persist($investor);
         $manager->persist($admin);

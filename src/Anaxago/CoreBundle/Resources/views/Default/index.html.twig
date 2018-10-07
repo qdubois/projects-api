@@ -25,7 +25,7 @@
                             <p><b>Appel de fond</b> : {{ project.callForFund|number_format(0, ',', ' ')   }} €</p>
                             <p><b>Sommes engagées</b> : {{ pledged|number_format(0, ',', ' ')   }} €</p>
                             {% if project.isFunded == false %}
-                                <a class="btn btn-block btn-primary gold" href="/invest?projectname={{ project.title }}">Investir</a>
+                                <a class="btn btn-block btn-primary gold" href="/invest?projectname={{ project.title }}&projectID={{ project.id }}">Investir</a>
                             {% else %}
                                 <a class="btn btn-block btn-primary grey" href="#">Projet financé</a>
 

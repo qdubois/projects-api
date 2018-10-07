@@ -59,13 +59,18 @@ class SecurityController extends Controller
 
         $registrationForm->handleRequest($request);
         if ($registrationForm->isSubmitted() && $registrationForm->isValid()) {
+            $APItoken = bin2hex(random_bytes(70)); // create API token
+            $newUser->setToken($APItoken);
             $em->persist($newUser);
             $em->flush();
+
 
             // login user after its registration
             $usernameToken = new UsernamePasswordToken($newUser, $newUser->getPassword(), 'main', $newUser->getRoles());
             $tokenStorage->setToken($usernameToken);
             $session->set('_security_main', serialize($usernameToken));
+
+
 
             return $this->redirectToRoute('anaxago_core_homepage');
         }

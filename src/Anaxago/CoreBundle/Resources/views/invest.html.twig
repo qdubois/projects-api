@@ -2,4 +2,9 @@
 
 {% block body %}
     {{ form(form) }}
+    {% if not app.user %}
+        <p>Vous devez être connecté pour investir. Veuillez vous
+        <a href="{{ path('anaxago_core_registration') }}">enregistrer</a> ou vous <a href="{{ path('login') }}" >connecter</a> !!
+        </p>
+    {% endif %}
 {% endblock %}

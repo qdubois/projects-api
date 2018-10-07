@@ -76,6 +76,12 @@ class User implements UserInterface
     private $email;
 
     /**
+     * @var string
+     * @ORM\Column(type="string")
+     */
+    private $token;
+
+    /**
      * @return int
      */
     public function getId()
@@ -268,6 +274,27 @@ class User implements UserInterface
     }
 
     /**
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     *
+     * @return User
+     */
+    public function setToken(string $token): User
+    {
+        // set API token
+        $this->token = $token;
+
+        return $this;
+    }
+
+    /**
      * Removes sensitive data from the user.
      *
      * This is important if, at any given point, sensitive information like
@@ -276,5 +303,6 @@ class User implements UserInterface
     public function eraseCredentials(): void
     {
         $this->plainPassword = null;
+        $this->token = null;
     }
 }

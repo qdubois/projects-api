@@ -42,6 +42,7 @@ class Funding
      * @var int
      *
      * @ORM\Column(name="projectID", type="integer")
+     *
      */
     private $projectID;
 

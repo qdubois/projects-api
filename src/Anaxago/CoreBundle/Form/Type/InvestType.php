@@ -4,7 +4,7 @@ namespace Anaxago\CoreBundle\Form\Type;
 
 use Anaxago\CoreBundle\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -25,12 +25,17 @@ class InvestType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $projectName =  $options['data']['project-name'];
+        $user =  $options['data']['user'];
+
         $builder
             ->add('back', ButtonType::class, array('label' => '<--','attr' => array('onClick' => 'window.history.go(-1)')))
-            ->add('amount', TextType::class, array('label' => 'How much do you want to invest in '.$projectName.' ?' ))
-            ->add('invest', SubmitType::class, array(
+            ->add('funding', NumberType::class, array('label' => 'How much do you want to invest in '.$projectName.' ?' ));
+            if (!empty($user)){ //test if login
+                $builder
+                ->add('invest', SubmitType::class, array(
                 'attr' => array('class' => 'btn btn-success'),'label' => 'Invest !!'
-            ));
+                ));
+            }
     }
 
     /**
