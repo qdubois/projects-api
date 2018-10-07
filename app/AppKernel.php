@@ -3,7 +3,7 @@
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
-use Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle;
+//use Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle;
 
 class AppKernel extends Kernel
 {
@@ -18,7 +18,6 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Anaxago\CoreBundle\AnaxagoCoreBundle(),
-            new Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
         ];
 
