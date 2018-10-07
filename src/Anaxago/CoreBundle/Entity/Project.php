@@ -57,6 +57,16 @@ class Project
      */
     private $callForFund;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="isFunded", type="boolean")
+     */
+    private $isFunded;
+
+
+
+
 
     /**
      * Get id
@@ -170,7 +180,7 @@ class Project
      *
      * @param float $callForFund
      *
-     * @return float
+     * @return Project
      */
     public function setCallForFund($callForFund)
     {
@@ -182,11 +192,36 @@ class Project
     /**
      * Get callForFund
      *
-     * @return *
+     * @return float
      */
     public function getCallForFund()
     {
         return $this->callForFund;
     }
+
+    /**
+     * Set isFunded
+     * @param float $isFunded
+     *
+     * @return Project
+     */
+    public function setIsFunded($isFunded)
+    {
+        $this->isFunded = $isFunded;
+
+        return $this;
+    }
+
+    /**
+     * Get isFunded
+     *
+     * @return boolean
+     */
+    public function getIsFunded()
+    {
+        return $this->isFunded;
+    }
+
+
 }
 

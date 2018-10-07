@@ -3,6 +3,7 @@
 namespace Anaxago\CoreBundle\Controller;
 
 use Anaxago\CoreBundle\Entity\Project;
+use Anaxago\CoreBundle\Entity\Funding;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,7 +23,8 @@ class DefaultController extends Controller
     public function indexAction(EntityManagerInterface $entityManager): Response
     {
         $projects = $entityManager->getRepository(Project::class)->findAll();
+        $fundings = $entityManager->getRepository(Funding::class)->findAll();
 
-        return $this->render('@AnaxagoCore/Default/index.html.twig', ['projects' => $projects]);
+        return $this->render('@AnaxagoCore/Default/index.html.twig', ['projects' => $projects,'fundings' => $fundings]);
     }
 }

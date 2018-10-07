@@ -11,3 +11,9 @@
     background: #AF9262;
     border-color: #AF9262;
 }
+
+.btn-primary.grey{
+    color: #fff;
+    background: #999999;
+    border-color: #999999;
+}

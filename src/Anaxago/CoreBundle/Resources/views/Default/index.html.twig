@@ -16,8 +16,20 @@
                             <p class="card-text">
                                 {{ project.description }}
                             </p>
+                            {% set pledged = 0 %}
+                            {% for funding in fundings %}
+                                {% if project.id == funding.projectID %}
+                                    {% set pledged = pledged + funding.funding  %}
+                                {% endif %}
+                            {% endfor %}
                             <p><b>Appel de fond</b> : {{ project.callForFund|number_format(0, ',', ' ')   }} €</p>
-                            <a class="btn btn-block btn-primary gold" href="/invest?projectname={{ project.title }}">Investir</a>
+                            <p><b>Sommes engagées</b> : {{ pledged|number_format(0, ',', ' ')   }} €</p>
+                            {% if project.isFunded == false %}
+                                <a class="btn btn-block btn-primary gold" href="/invest?projectname={{ project.title }}">Investir</a>
+                            {% else %}
+                                <a class="btn btn-block btn-primary grey" href="#">Projet financé</a>
+
+                            {% endif %}
                         </div>
 
                     </div>

@@ -32,7 +32,8 @@ class ProjectFixtures extends Fixture
                 ->setDescription($project['description'])
                 ->setImageURL($project['imageURL'])
                 ->setSlug($project['slug'])
-                ->setCallForFund($project['callForFund']);
+                ->setCallForFund($project['callForFund'])
+                ->setIsFunded($project['isFunded']);
             $manager->persist($projectToPersist);
         }
         $manager->flush();
@@ -50,6 +51,7 @@ class ProjectFixtures extends Fixture
                 'slug' => 'fred-compta',
                 'callForFund' => '4000000',
                 'imageURL' => 'https://www.anaxago.com/uploads/media/teasercarousel/0001/96/thumb_95216_teasercarousel_widget.png',
+                'isFunded' => false,
             ],
             [
                 'name' => 'Mojjo',
@@ -57,7 +59,7 @@ class ProjectFixtures extends Fixture
                 'slug' => 'mojjo',
                 'callForFund' => '600000',
                 'imageURL' => 'https://www.anaxago.com/uploads/media/teasercarousel/0001/85/thumb_84096_teasercarousel_widget.png',
-
+                'isFunded' => true,
             ],
             [
                 'name' => 'Eole',
@@ -65,6 +67,7 @@ class ProjectFixtures extends Fixture
                 'slug' => 'eole',
                 'callForFund' => '2000000',
                 'imageURL' => 'https://picsum.photos/338/187/?random',
+                'isFunded' => false,
             ],
         ];
     }
