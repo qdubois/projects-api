@@ -12,8 +12,8 @@
 !var/logs/.gitkeep
 !/var/sessions
 /var/sessions/*
-!/var/jwt
-/var/jwt/*
+!/app/config/jwt
+/app/config/jwt/*
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /vendor/

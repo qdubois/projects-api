@@ -17,6 +17,11 @@ invest:
     path: /invest
     defaults: { _controller: AnaxagoCoreBundle:Invest:invest }
 
+
 API:
     path: /api/projects
     defaults: { _controller: AnaxagoCoreBundle:API:projectsList }
+
+
+api_login_check:
+    path: /api/login_check
