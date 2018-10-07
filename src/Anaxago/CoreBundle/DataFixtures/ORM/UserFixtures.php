@@ -40,7 +40,7 @@ class UserFixtures extends Fixture
         $userQuentin = (new User())
             ->setFirstName('Jane')
             ->setLastName('Doo')
-            ->setEmail('dubois.quentin@gmail.com')
+            ->setEmail('jane@local.com')
             ->setPlainPassword('pingpong')
             ->setToken('dsfsddfsdflksdlfmlsdkflmsdkflsdkflsdkflksdlfkdslklsdfsdfezgllm');
 
